@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: shengchang-edge-tts
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
