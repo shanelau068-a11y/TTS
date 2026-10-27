@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-27",
+  "repository": "TTS",
+  "defaultBranch": "main",
+  "visibility": "public",
+  "sourceCommit": "d11eb3c516ac6f8670abe2e7134478fa515833c2",
+  "status": "已通过所列检查",
+  "checks": [
+    {
+      "command": "python -c from fastapi.testclient import TestClient; from server.app import app; c=TestClient(app); r=c.get(\"/openapi.json\"); assert r.status_code==200; print(\"FastAPI routes loaded without requesting TTS\")",
+      "result": "通过",
+      "code": 0
+    },
+    {
+      "command": "HTTP GET index.html and local src/href resources under repository subpath",
+      "result": "通过",
+      "resources": 0
+    }
+  ],
+  "scope": [
+    "本轮后端路由可加载，未调用Edge服务或收费语音API；外部音色和可用性需实际请求确认。"
+  ],
+  "syntax": {
+    "javascript": 1,
+    "python": 1,
+    "powershell": 0
+  },
+  "runtime": {
+    "node": "24.12.0",
+    "python": "3.12.14",
+    "os": "Windows"
+  }
+}
